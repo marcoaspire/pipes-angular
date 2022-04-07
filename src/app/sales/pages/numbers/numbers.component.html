@@ -1,0 +1,32 @@
+
+
+<div class="text-white">
+    <h1>DecimalPipe and porcentages pipes</h1>
+    <p>
+        Pipes in Common Mudule
+    </p>
+</div>
+
+<div class="grid text-white">
+    <div class="col-6">
+            <p-card header="NEt sales" subheader="current year">
+                <i class="pi pi-dollar"></i>
+                <!-- 2 decimals  -->
+                {{ sales+1 | number:'1.2-2'}}  
+            </p-card>
+    </div>
+    <div class="col-6">
+            <p-card header="Gross sales" subheader="current year">
+                
+                <!-- 2 decimals  -->
+                {{ sales+2000 | currency:'MXN':'symbol-narrow':'1.4-4' }}  
+            </p-card>
+    </div>
+    <div class="col-6">
+            <p-card header="Earn %" subheader="current year">
+                
+                <!-- 2 decimals  -->
+                {{ percentage | percent:'2.2-4' }}  
+            </p-card>
+    </div>
+</div>

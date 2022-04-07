@@ -1,0 +1,75 @@
+
+<div class="text-white">
+    <h1>Non commons pipes</h1>
+    <p>
+        Pipes in Common Mudule
+    </p>
+</div>
+    
+
+<div class="grid text-white">
+    <div class="col-6">
+        <p-fieldset legend="i18nSelect Pipe" [toggleable]="true" [transitionOptions]="'0ms'">
+                {{name}} , your pronom is 
+                {{sex | i18nSelect: map }}
+                <button pButton type="button" label="Change" (click)="change()" ></button>
+
+            </p-fieldset>
+    </div>
+    <div class="col-6">
+            <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+                    Currently we have {{customers.length | i18nPlural:customersMap }}
+                    <button pButton type="button" label="Delete" (click)="delete()"></button>
+            </p-fieldset>
+
+        </div>
+</div>
+
+
+<div class="grid text-white">
+    <div class="col-6">
+        <p-fieldset legend="Slice Pipe" [toggleable]="true" [transitionOptions]="'0ms'">
+                <b>Original:</b>
+                <!-- <span *ngFor="let item of customers">{{item}}</span> -->
+                <pre>{{customers}}</pre>
+                <b>slice:0:2</b>
+                <pre>{{customers| slice:0:2 }}</pre>
+
+                <b>slice:1:2</b>
+                <pre>{{customers| slice:1:2 }}</pre>
+
+            </p-fieldset>
+    </div>
+    
+    <div class="col-6">
+        <p-fieldset legend="Json Pipe" [toggleable]="true" [transitionOptions]="'0ms'">
+            <pre>
+                    {{heroes | json}} 
+            </pre>       
+        </p-fieldset>
+    </div>
+    
+   <div class="col-6">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true" [transitionOptions]="'0ms'">
+                    <ul>
+                        <li *ngFor="let item of person | keyvalue ">
+                            <b> {{item.key | titlecase}} </b>: {{item.value}}   
+                        <!-- {{item | json}} -->
+                        </li>
+                    </ul>          
+        </p-fieldset>
+    </div>
+
+    <div class="col-6">
+            <p-fieldset legend="Async Pipe" [toggleable]="true" [transitionOptions]="'0ms'">
+                <pre *ngIf="!(valuePromise | async)">Loading promise</pre>
+                <pre>
+                    <!-- {{observable| async}} -->
+                    {{valuePromise | async}}
+                </pre>      
+            </p-fieldset>
+        </div>
+    
+        
+
+</div>
