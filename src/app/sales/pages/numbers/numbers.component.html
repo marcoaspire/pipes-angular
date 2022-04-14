@@ -18,14 +18,14 @@
     <div class="col-6">
             <p-card header="Gross sales" subheader="current year">
                 
-                <!-- 2 decimals  -->
+                <!-- 4 decimals  -->
                 {{ sales+2000 | currency:'MXN':'symbol-narrow':'1.4-4' }}  
             </p-card>
     </div>
     <div class="col-6">
             <p-card header="Earn %" subheader="current year">
                 
-                <!-- 2 decimals  -->
+                <!-- 2-4 decimals  -->
                 {{ percentage | percent:'2.2-4' }}  
             </p-card>
     </div>
